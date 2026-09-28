@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Optional: lets IntelliJ IDEA / Eclipse / VS Code import the backend as a Maven project.
+     The project does not need Maven to build or run; see build.bat / build.sh. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>gov.gujarat.rnb</groupId>
+  <artifactId>infratrack</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+  <name>Gujarat R&amp;B InfraTrack</name>
+
+  <properties>
+    <maven.compiler.release>17</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>2.2.224</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>infratrack</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>gov.gujarat.rnb.infratrack.App</mainClass>
+            </manifest>
+            <manifestEntries>
+              <Class-Path>lib/h2-2.2.224.jar</Class-Path>
+            </manifestEntries>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

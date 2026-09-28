@@ -1,0 +1,11 @@
+services:
+  infratrack:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      JWT_SECRET: change-me-for-production
+    volumes:
+      - infratrack-data:/app/data
+volumes:
+  infratrack-data:
